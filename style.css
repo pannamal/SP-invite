@@ -1,0 +1,4853 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --wine: #32151B;
+    --deep-plum: #241217;
+    --dark: #160b0e;
+
+    --champagne: #E6D2A5;
+    --gold: #B89552;
+    --soft-gold: #d9bf82;
+
+    --ivory: #FAF6EE;
+    --rose: #C99A9D;
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "DM Sans", sans-serif;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+body {
+
+    overflow: hidden;
+
+    background:
+        var(--deep-plum);
+
+    color:
+        var(--ivory);
+
+    font-family:
+        var(--sans);
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.luxury-intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        var(--deep-plum);
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+
+}
+
+
+.luxury-photo {
+
+    position: absolute;
+
+    inset: -5%;
+
+    background:
+        linear-gradient(
+            rgba(36, 18, 23, .2),
+            rgba(36, 18, 23, .2)
+        ),
+        url("../images/engagement-hand.jpg")
+        center / cover no-repeat;
+
+    filter:
+        brightness(.55)
+        saturate(.75);
+
+    animation:
+        luxuryZoom 14s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes luxuryZoom {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+
+}
+
+
+.luxury-veil {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(230,210,165,.12),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(36,18,23,.82),
+            rgba(36,18,23,.35),
+            rgba(36,18,23,.82)
+        ),
+
+        linear-gradient(
+            rgba(36,18,23,.15),
+            rgba(36,18,23,.72)
+        );
+
+}
+
+
+.velvet-glow {
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(230,210,165,.12),
+            transparent 68%
+        );
+
+    filter: blur(10px);
+
+}
+
+
+/* =========================================================
+   FRAME
+========================================================= */
+
+.luxury-frame {
+
+    position: absolute;
+
+    inset: 28px;
+
+    border:
+        1px solid rgba(230,210,165,.48);
+
+    pointer-events: none;
+
+}
+
+
+.luxury-frame::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border:
+        1px solid rgba(230,210,165,.18);
+
+}
+
+
+.corner {
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    border-color:
+        var(--champagne);
+
+    border-style: solid;
+
+}
+
+
+.corner-tl {
+
+    top: -1px;
+    left: -1px;
+
+    border-width:
+        2px 0 0 2px;
+
+}
+
+
+.corner-tr {
+
+    top: -1px;
+    right: -1px;
+
+    border-width:
+        2px 2px 0 0;
+
+}
+
+
+.corner-bl {
+
+    bottom: -1px;
+    left: -1px;
+
+    border-width:
+        0 0 2px 2px;
+
+}
+
+
+.corner-br {
+
+    bottom: -1px;
+    right: -1px;
+
+    border-width:
+        0 2px 2px 0;
+
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.intro-top {
+
+    position: absolute;
+
+    top: 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+
+.intro-small {
+
+    font-size: 9px;
+
+    letter-spacing: .35em;
+
+    color:
+        var(--champagne);
+
+    opacity: .85;
+
+}
+
+
+.intro-line {
+
+    width: 45px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold)
+        );
+
+}
+
+
+.intro-line:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   INVITATION STAGE
+========================================================= */
+
+.invitation-stage {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    z-index: 5;
+
+}
+
+
+.intro-names-luxury {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    font-family:
+        var(--serif);
+
+    font-size:
+        clamp(32px, 4vw, 58px);
+
+    color:
+        var(--ivory);
+
+    text-shadow:
+        0 2px 30px rgba(0,0,0,.4);
+
+}
+
+
+.intro-names-luxury i {
+
+    font-size:
+        .55em;
+
+    color:
+        var(--champagne);
+
+    font-weight: 300;
+
+}
+
+
+.intro-date-luxury {
+
+    font-size: 9px;
+
+    letter-spacing:
+        .45em;
+
+    color:
+        var(--champagne);
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.luxury-envelope {
+
+    position: relative;
+
+    width: min(390px, 75vw);
+
+    aspect-ratio: 1.5 / 1;
+
+    perspective: 1000px;
+
+}
+
+
+.envelope-shadow {
+
+    position: absolute;
+
+    width: 90%;
+
+    height: 25px;
+
+    left: 5%;
+
+    bottom: -20px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.55);
+
+    filter: blur(16px);
+
+}
+
+
+.envelope-shell {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: visible;
+
+    border:
+        1px solid rgba(230,210,165,.75);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #4a2028,
+            #32151B 50%,
+            #251015
+        );
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.55),
+
+        inset 0 0 40px rgba(0,0,0,.25);
+
+}
+
+
+.envelope-texture {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .12;
+
+    background:
+
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255,255,255,.2) 4px,
+            transparent 5px
+        );
+
+}
+
+
+.gold-lining {
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid rgba(230,210,165,.25);
+
+}
+
+
+/* =========================================================
+   INVITATION PAPER
+========================================================= */
+
+.invitation-paper {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 10%;
+
+    right: 10%;
+
+    top: 12%;
+
+    bottom: 12%;
+
+    width: auto;
+
+    height: auto;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    background:
+        linear-gradient(
+            145deg,
+            #4a2028,
+            #32151B 50%,
+            #251015
+        );
+
+    color:
+        var(--champagne);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.45),
+        inset 0 0 30px rgba(0,0,0,.3);
+
+    transition:
+        transform 1.3s cubic-bezier(.2,.8,.2,1);
+
+    overflow: hidden;
+
+}
+
+
+.paper-border {
+
+    position: absolute;
+
+    inset: 9px;
+
+    border:
+        1px solid var(--gold);
+
+}
+
+
+.paper-content {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    transform: scale(.96);
+
+    transition:
+        opacity 1s ease .4s,
+        transform 1s ease .4s;
+
+    pointer-events: none;
+
+}
+
+
+.luxury-envelope.open
+.paper-content {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    pointer-events: auto;
+
+}
+
+
+.paper-teaser {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .6s ease,
+        visibility .6s ease;
+
+}
+
+.teaser-spacer {
+
+    display: none;
+
+}
+
+
+.teaser-hand-image {
+
+    width: 92px;
+
+    height: 92px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid var(--gold);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.4);
+
+    opacity: .01;
+
+    filter:
+        saturate(.85)
+        brightness(.95);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s ease;
+
+}
+
+
+.luxury-envelope.open
+.paper-teaser {
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.luxury-envelope.open
+.teaser-hand-image {
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.9);
+
+}
+
+
+.paper-teaser-text {
+
+    font-family:
+        var(--sans);
+
+    font-size: 12px;
+
+    letter-spacing: .4em;
+
+    color:
+        var(--champagne);
+
+    margin-top: 2px;
+
+    position: relative;
+
+    top: 2px;
+
+}
+
+
+.teaser-line {
+
+    width: 40px;
+
+    height: 1px;
+
+    background:
+        var(--gold);
+
+}
+
+
+.paper-small {
+
+    font-family:
+        var(--sans);
+
+    font-size: 7px;
+
+    letter-spacing: .35em;
+
+    color:
+        var(--gold);
+
+}
+
+
+.paper-content h2 {
+
+    font-family:
+        var(--serif);
+
+    font-size:
+        clamp(25px, 4vw, 40px);
+
+    font-weight: 500;
+
+}
+
+
+.paper-amp {
+
+    font-family:
+        var(--serif);
+
+    color:
+        var(--gold);
+
+    font-size: 22px;
+
+}
+
+
+.paper-date {
+
+    margin-top: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: .25em;
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+.envelope-flap-luxury {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 63%
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            #56252e,
+            #34151b
+        );
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.flap-inner {
+
+    position: absolute;
+
+    inset: 0;
+
+    clip-path:
+        polygon(
+            2% 2%,
+            98% 2%,
+            50% 58%
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(230,210,165,.12),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.luxury-wax {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 55%;
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid var(--gold);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #2a2320,
+            #1c1614 60%,
+            #0f0b0a
+        );
+
+    transform:
+        translate(-50%, -50%);
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.45),
+
+        inset 0 3px 8px rgba(255,255,255,.1),
+
+        0 0 0 5px rgba(230,210,165,.08);
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+
+}
+
+
+.luxury-wax:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+
+}
+
+
+.wax-ring {
+
+    position: absolute;
+
+    inset: 7px;
+
+    border:
+        1px solid rgba(230,210,165,.55);
+
+    border-radius: 50%;
+
+}
+
+
+.wax-emblem {
+
+    position: absolute;
+
+    inset: 4px;
+
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(0 1px 2px rgba(0,0,0,.4));
+
+}
+
+
+/* =========================================================
+   OPEN ANIMATION
+========================================================= */
+
+.luxury-envelope.open
+.envelope-flap-luxury {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.luxury-envelope.open
+.invitation-paper {
+
+    transform:
+        translateY(-14%)
+        scale(1.08);
+
+}
+
+
+.luxury-envelope.open
+.luxury-wax {
+
+    transform:
+        translate(-50%, -50%)
+        scale(.2)
+        rotate(25deg);
+
+    opacity: 0;
+
+}
+
+
+/* =========================================================
+   INSTRUCTION
+========================================================= */
+
+.seal-instruction {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+    font-size: 8px;
+
+    letter-spacing: .35em;
+
+    color:
+        var(--champagne);
+
+    animation:
+        breathe 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+.instruction-line {
+
+    width: 35px;
+
+    height: 1px;
+
+    background:
+        rgba(230,210,165,.5);
+
+}
+
+
+/* =========================================================
+   GOLD DUST
+========================================================= */
+
+.gold-dust {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.gold-dust span {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        var(--champagne);
+
+    box-shadow:
+        0 0 8px var(--champagne);
+
+    opacity: .5;
+
+    animation:
+        floatDust 6s ease-in-out infinite;
+
+}
+
+
+.gold-dust span:nth-child(1) {
+    left: 12%;
+    top: 20%;
+    animation-delay: -1s;
+}
+
+.gold-dust span:nth-child(2) {
+    left: 80%;
+    top: 18%;
+    animation-delay: -3s;
+}
+
+.gold-dust span:nth-child(3) {
+    left: 18%;
+    top: 72%;
+    animation-delay: -2s;
+}
+
+.gold-dust span:nth-child(4) {
+    left: 88%;
+    top: 65%;
+    animation-delay: -4s;
+}
+
+.gold-dust span:nth-child(5) {
+    left: 25%;
+    top: 40%;
+    animation-delay: -1.5s;
+}
+
+.gold-dust span:nth-child(6) {
+    left: 73%;
+    top: 45%;
+    animation-delay: -2.5s;
+}
+
+.gold-dust span:nth-child(7) {
+    left: 8%;
+    top: 55%;
+    animation-delay: -4s;
+}
+
+.gold-dust span:nth-child(8) {
+    left: 92%;
+    top: 35%;
+    animation-delay: -2s;
+}
+
+.gold-dust span:nth-child(9) {
+    left: 35%;
+    top: 12%;
+    animation-delay: -3s;
+}
+
+.gold-dust span:nth-child(10) {
+    left: 65%;
+    top: 82%;
+    animation-delay: -1s;
+}
+
+.gold-dust span:nth-child(11) {
+    left: 50%;
+    top: 8%;
+    animation-delay: -4s;
+}
+
+.gold-dust span:nth-child(12) {
+    left: 48%;
+    top: 92%;
+    animation-delay: -2s;
+}
+
+
+@keyframes floatDust {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0)
+            scale(.7);
+    }
+
+    50% {
+        transform:
+            translate(12px,-20px)
+            scale(1.4);
+    }
+
+}
+
+
+.intro-bottom {
+
+    position: absolute;
+
+    bottom: 5%;
+
+    font-size: 8px;
+
+    letter-spacing: .4em;
+
+    color:
+        rgba(230,210,165,.65);
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    position: fixed;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+
+}
+
+
+.main-content.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================================================
+   SCENES
+========================================================= */
+
+.scene {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+}
+
+
+.scene.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home-scene {
+
+    background:
+
+        linear-gradient(
+            rgba(36,18,23,.52),
+            rgba(36,18,23,.78)
+        ),
+
+        url("../images/couple.jpg")
+        center / cover no-repeat;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.home-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(20,8,11,.6) 100%
+        );
+
+}
+
+
+.home-stars {
+
+    position: absolute;
+
+    top: 5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    gap: 35px;
+
+    color:
+        var(--champagne);
+
+    opacity: .6;
+
+}
+
+
+.home-kicker {
+
+    position: absolute;
+
+    top: 9%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 9px;
+
+    letter-spacing: .45em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+/* =========================================================
+   COUPLE CENTER
+========================================================= */
+
+.couple-center {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.portrait-frame {
+
+    position: relative;
+
+    width:
+        clamp(200px, 25vw, 330px);
+
+    height:
+        clamp(270px, 38vw, 440px);
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(230,210,165,.7);
+
+    box-shadow:
+
+        0 20px 80px rgba(0,0,0,.55);
+
+}
+
+
+.portrait-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        saturate(.8)
+        contrast(.95);
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.portrait-frame:hover img {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+.portrait-gold-line {
+
+    position: absolute;
+
+    z-index: 2;
+
+    inset: 8px;
+
+    border:
+        1px solid rgba(230,210,165,.4);
+
+}
+
+
+.portrait-halo {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(230,210,165,.13),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+
+}
+
+
+.portrait-caption {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    gap: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+
+    color:
+        var(--ivory);
+
+    white-space: nowrap;
+
+}
+
+
+.portrait-caption i {
+
+    color:
+        var(--champagne);
+
+}
+
+
+.home-names {
+
+    margin-top: 16px;
+
+    text-align: center;
+
+}
+
+
+.home-names h1 {
+
+    font-family:
+        var(--serif);
+
+    font-size:
+        clamp(32px, 5vw, 62px);
+
+    font-weight: 400;
+
+    line-height: .85;
+
+}
+
+
+.home-names h1 span {
+
+    color:
+        var(--champagne);
+
+    font-size: .55em;
+
+    margin: 0 8px;
+
+}
+
+
+.home-names p {
+
+    margin-top: 10px;
+
+    font-size: 8px;
+
+    letter-spacing: .4em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+}
+
+
+.countdown-item {
+
+    min-width: 65px;
+
+    text-align: center;
+
+}
+
+
+.countdown-item strong {
+
+    display: block;
+
+    font-family:
+        var(--serif);
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    color:
+        var(--ivory);
+
+}
+
+
+.countdown-item span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 6px;
+
+    letter-spacing: .22em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.countdown-separator {
+
+    color:
+        var(--gold);
+
+    font-family:
+        var(--serif);
+
+    font-size: 20px;
+
+    opacity: .7;
+
+}
+
+
+/* =========================================================
+   DISCOVERY ITEMS
+========================================================= */
+
+.discovery-item {
+
+    position: absolute;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    width: 190px;
+
+    padding: 8px;
+
+}
+
+
+.item-story {
+
+    left: 8%;
+
+    top: 32%;
+
+}
+
+
+.item-moments {
+
+    left: 10%;
+
+    bottom: 20%;
+
+}
+
+
+.item-celebrations {
+
+    right: 8%;
+
+    top: 32%;
+
+}
+
+
+.item-rsvp {
+
+    right: 10%;
+
+    bottom: 20%;
+
+}
+
+
+.discovery-number {
+
+    font-size: 7px;
+
+    letter-spacing: .25em;
+
+    color:
+        var(--champagne);
+
+    margin-bottom: 5px;
+
+}
+
+
+.discovery-item h3 {
+
+    font-family:
+        var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    color:
+        var(--ivory);
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.discovery-item:hover h3 {
+
+    color:
+        var(--champagne);
+
+}
+
+
+.discovery-line {
+
+    display: block;
+
+    width: 55px;
+
+    height: 1px;
+
+    margin-top: 8px;
+
+    background:
+        var(--gold);
+
+    transition:
+        width .4s ease;
+
+}
+
+
+.discovery-item:hover .discovery-line {
+
+    width: 100px;
+
+}
+
+
+/* =========================================================
+   HOVER PREVIEW
+========================================================= */
+
+.hover-preview {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom:
+        calc(100% + 18px);
+
+    width: 270px;
+
+    padding: 8px;
+
+    background:
+        rgba(36,18,23,.96);
+
+    border:
+        1px solid rgba(230,210,165,.4);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translate(-50%, 12px)
+        scale(.96);
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease,
+        transform .35s ease;
+
+}
+
+
+.hover-preview::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -7px;
+
+    width: 12px;
+    height: 12px;
+
+    background:
+        rgba(36,18,23,.96);
+
+    border-right:
+        1px solid rgba(230,210,165,.4);
+
+    border-bottom:
+        1px solid rgba(230,210,165,.4);
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+}
+
+
+.discovery-item:hover .hover-preview,
+.discovery-item:focus .hover-preview {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translate(-50%, 0)
+        scale(1);
+
+}
+
+
+.hover-preview img {
+
+    width: 100%;
+
+    height: 115px;
+
+    object-fit: cover;
+
+}
+
+
+.preview-content {
+
+    padding: 12px 8px 8px;
+
+}
+
+
+.preview-content span {
+
+    font-size: 6px;
+
+    letter-spacing: .3em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.preview-content h4 {
+
+    margin-top: 5px;
+
+    font-family:
+        var(--serif);
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+}
+
+
+.preview-content p {
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(250,246,238,.65);
+
+}
+
+
+/* =========================================================
+   SCROLL HINT
+========================================================= */
+
+.scroll-hint {
+
+    position: absolute;
+
+    bottom: 4%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 7px;
+
+    letter-spacing: .3em;
+
+    color:
+        rgba(230,210,165,.55);
+
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-toggle {
+
+    position: fixed;
+
+    z-index: 100;
+
+    top: 28px;
+
+    right: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border: 0;
+
+    background: transparent;
+
+    color:
+        var(--champagne);
+
+    cursor: pointer;
+
+}
+
+
+.music-icon {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(230,210,165,.5);
+
+    border-radius: 50%;
+
+}
+
+
+.music-text {
+
+    font-size: 7px;
+
+    letter-spacing: .25em;
+
+}
+
+
+.music-toggle.playing
+.music-icon {
+
+    animation:
+        musicPulse 1.5s infinite;
+
+}
+
+
+@keyframes musicPulse {
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* =========================================================
+   INNER SCENES
+========================================================= */
+
+.inner-scene {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #45232b,
+            var(--deep-plum) 70%
+        );
+
+    overflow: auto;
+
+    padding: 70px 8%;
+
+}
+
+
+.home-button {
+
+    position: fixed;
+
+    z-index: 100;
+
+    top: 28px;
+
+    left: 32px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(230,210,165,.6);
+
+    background:
+        rgba(36,18,23,.6);
+
+    color:
+        var(--champagne);
+
+    font-family:
+        var(--serif);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+
+.inner-header {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.inner-header span {
+
+    font-size: 7px;
+
+    letter-spacing: .4em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.inner-header h2 {
+
+    margin-top: 5px;
+
+    font-family:
+        var(--serif);
+
+    font-size:
+        clamp(40px, 5vw, 70px);
+
+    font-weight: 400;
+
+}
+
+
+.inner-header div {
+
+    width: 50px;
+
+    height: 1px;
+
+    background:
+        var(--gold);
+
+    margin:
+        12px auto;
+
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story-layout {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.story-image {
+
+    position: relative;
+
+}
+
+
+.story-image img {
+
+    width: 100%;
+
+    height: 470px;
+
+    object-fit: cover;
+
+    border:
+        1px solid rgba(230,210,165,.5);
+
+}
+
+
+.story-image span {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    right: 15px;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.story-kicker {
+
+    font-size: 8px;
+
+    letter-spacing: .3em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.story-content h3 {
+
+    margin-top: 15px;
+
+    font-family:
+        var(--serif);
+
+    font-size:
+        clamp(35px, 4vw, 55px);
+
+    font-weight: 400;
+
+    line-height: .95;
+
+}
+
+
+.story-content p {
+
+    max-width: 430px;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color:
+        rgba(250,246,238,.7);
+
+}
+
+
+.story-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 40px;
+
+}
+
+
+.story-controls button {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border:
+        1px solid rgba(230,210,165,.5);
+
+    color:
+        var(--champagne);
+
+    cursor: pointer;
+
+}
+
+
+.story-dots {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+
+.story-dot {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(230,210,165,.3);
+
+}
+
+
+.story-dot.active {
+
+    background:
+        var(--champagne);
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+
+.gallery-main {
+
+    position: relative;
+
+    width:
+        min(650px, 70vw);
+
+}
+
+
+.gallery-main img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 480px;
+
+    object-fit: cover;
+
+    border:
+        1px solid rgba(230,210,165,.5);
+
+}
+
+
+.gallery-number {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 15px;
+
+    left: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: .15em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.gallery-caption {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 20px;
+
+    font-size: 8px;
+
+    letter-spacing: .3em;
+
+}
+
+
+.gallery-arrow {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(230,210,165,.5);
+
+    background: transparent;
+
+    color:
+        var(--champagne);
+
+    cursor: pointer;
+
+}
+
+
+.gallery-thumbnails {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.gallery-thumb {
+
+    width: 65px;
+    height: 65px;
+
+    padding: 0;
+
+    border:
+        1px solid transparent;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    opacity: .5;
+
+}
+
+
+.gallery-thumb.active {
+
+    border-color:
+        var(--champagne);
+
+    opacity: 1;
+
+}
+
+
+.gallery-thumb img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events-intro {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.events-intro p {
+
+    font-size: 7px;
+
+    letter-spacing: .4em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.events-intro h3 {
+
+    margin-top: 5px;
+
+    font-family:
+        var(--serif);
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+}
+
+
+.events-grid {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.event-card {
+
+    height: 390px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+
+}
+
+
+.event-card-inner {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition:
+        transform .8s ease;
+
+    transform-style: preserve-3d;
+
+}
+
+
+.event-card.flipped
+.event-card-inner {
+
+    transform:
+        rotateY(180deg);
+
+}
+
+
+.event-front,
+.event-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    backface-visibility: hidden;
+
+    border:
+        1px solid rgba(230,210,165,.4);
+
+    background:
+        rgba(36,18,23,.65);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+
+.event-front {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(78,35,44,.75),
+            rgba(36,18,23,.9)
+        );
+
+}
+
+
+.event-number {
+
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    font-size: 8px;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.event-month {
+
+    font-size: 7px;
+
+    letter-spacing: .35em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.event-front strong {
+
+    font-family:
+        var(--serif);
+
+    font-size: 75px;
+
+    line-height: .9;
+
+    font-weight: 300;
+
+}
+
+
+.event-front h3 {
+
+    font-family:
+        var(--serif);
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+}
+
+
+.event-front p {
+
+    font-size: 9px;
+
+    color:
+        rgba(250,246,238,.65);
+
+}
+
+
+.event-hint {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    font-size: 6px;
+
+    letter-spacing: .25em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.event-back {
+
+    transform:
+        rotateY(180deg);
+
+    background:
+        var(--ivory);
+
+    color:
+        var(--wine);
+
+}
+
+
+.event-back > span {
+
+    font-size: 7px;
+
+    letter-spacing: .25em;
+
+    color:
+        var(--gold);
+
+}
+
+
+.event-back h3 {
+
+    margin-top: 10px;
+
+    font-family:
+        var(--serif);
+
+    font-size: 35px;
+
+    font-weight: 500;
+
+}
+
+
+.event-back p {
+
+    margin-top: 12px;
+
+    max-width: 250px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(50,21,27,.7);
+
+}
+
+
+.event-time {
+
+    margin-top: 20px;
+
+    font-family:
+        var(--serif);
+
+    font-size: 27px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.event-back small {
+
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    color:
+        rgba(50,21,27,.55);
+
+}
+
+
+.event-back .venue-link {
+
+    margin-top: 10px;
+
+    display: inline-block;
+
+    font-size: 8px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    color:
+        var(--wine);
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    transition:
+        opacity .2s ease;
+
+}
+
+
+.event-back .venue-link:hover,
+.event-back .venue-link:focus-visible {
+
+    opacity: .8;
+
+}
+
+
+/* =========================================================
+   RSVP
+========================================================= */
+
+.rsvp-scene {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.rsvp-container {
+
+    text-align: center;
+
+}
+
+
+.rsvp-small {
+
+    font-size: 8px;
+
+    letter-spacing: .4em;
+
+    color:
+        var(--champagne);
+
+}
+
+
+.rsvp-envelope {
+
+    position: relative;
+
+    width:
+        min(500px, 75vw);
+
+    height: 300px;
+
+    margin: 25px auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #54252e,
+            #32151B
+        );
+
+    border:
+        1px solid rgba(230,210,165,.5);
+
+    overflow: hidden;
+
+}
+
+
+.rsvp-flap {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        #4a2028;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 55%
+        );
+
+    border-bottom:
+        1px solid rgba(230,210,165,.25);
+
+}
+
+
+.rsvp-paper {
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 70%;
+
+    height: 85%;
+
+    left: 15%;
+
+    top: 10%;
+
+    background:
+        var(--ivory);
+
+    color:
+        var(--wine);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+.rsvp-paper span {
+
+    font-size: 7px;
+
+    letter-spacing: .35em;
+
+    color:
+        var(--gold);
+
+}
+
+
+.rsvp-paper h2 {
+
+    font-family:
+        var(--serif);
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+}
+
+
+.rsvp-paper p {
+
+    max-width: 280px;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(50,21,27,.65);
+
+}
+
+
+.rsvp-names {
+
+    margin-top: 12px;
+
+    font-family:
+        var(--serif);
+
+    font-size: 22px;
+
+}
+
+
+.rsvp-date {
+
+    margin-top: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: .2em;
+
+    color:
+        var(--gold);
+
+}
+
+
+.rsvp-actions {
+
+    margin-top: 20px;
+
+}
+
+
+.rsvp-button {
+
+    display: inline-block;
+
+    padding:
+        13px 24px;
+
+    border:
+        1px solid var(--gold);
+
+    color:
+        var(--champagne);
+
+    text-decoration: none;
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
+}
+
+
+.rsvp-button:hover {
+
+    background:
+        var(--champagne);
+
+    color:
+        var(--wine);
+
+}
+
+
+.rsvp-note {
+
+    margin-top: 15px;
+
+    font-size: 9px;
+
+    color:
+        rgba(250,246,238,.55);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+    .luxury-frame {
+        inset: 14px;
+    }
+
+
+    .intro-top {
+        top: 6%;
+    }
+
+
+    .intro-small {
+        font-size: 7px;
+        letter-spacing: .2em;
+    }
+
+
+    .intro-line {
+        width: 20px;
+    }
+
+
+    .intro-names-luxury {
+        font-size: 34px;
+    }
+
+
+    .luxury-envelope {
+        width: 80vw;
+    }
+
+
+    .intro-bottom {
+        font-size: 6px;
+        letter-spacing: .25em;
+    }
+
+
+    .music-toggle {
+        top: 18px;
+        right: 18px;
+    }
+
+
+    .music-text {
+        display: none;
+    }
+
+
+    .home-button {
+        top: 18px;
+        left: 18px;
+    }
+
+
+    .home-kicker {
+        top: 7%;
+    }
+
+
+    .portrait-frame {
+
+        width: 210px;
+        height: 285px;
+
+    }
+
+
+    .home-names h1 {
+        font-size: 35px;
+    }
+
+
+    .countdown-item {
+        min-width: 50px;
+    }
+
+
+    .countdown-item strong {
+        font-size: 20px;
+    }
+
+
+    .countdown-item span {
+        font-size: 5px;
+    }
+
+
+    .discovery-item {
+        width: 135px;
+    }
+
+
+    .discovery-item h3 {
+        font-size: 21px;
+    }
+
+
+    .item-story {
+        left: 2%;
+        top: 25%;
+    }
+
+
+    .item-moments {
+        left: 2%;
+        bottom: 13%;
+    }
+
+
+    .item-celebrations {
+        right: 2%;
+        top: 25%;
+    }
+
+
+    .item-rsvp {
+        right: 2%;
+        bottom: 13%;
+    }
+
+
+    .hover-preview {
+        width: 210px;
+    }
+
+
+    .hover-preview img {
+        height: 85px;
+    }
+
+
+    .scroll-hint {
+        display: none;
+    }
+
+
+    .inner-scene {
+        padding:
+            70px 20px 40px;
+    }
+
+
+    .story-layout {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .story-image img {
+        height: 320px;
+    }
+
+
+    .story-content h3 {
+        font-size: 40px;
+    }
+
+
+    .gallery {
+        gap: 8px;
+    }
+
+
+    .gallery-main {
+        width: 75vw;
+    }
+
+
+    .gallery-main img {
+        height: 380px;
+    }
+
+
+    .gallery-arrow {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .gallery-thumbnails {
+        gap: 5px;
+    }
+
+
+    .gallery-thumb {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .events-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 330px;
+
+    }
+
+
+    .event-card {
+        height: 330px;
+    }
+
+
+    .events-intro {
+        margin-bottom: 20px;
+    }
+
+
+    .events-intro h3 {
+        font-size: 27px;
+    }
+
+
+    .rsvp-envelope {
+        height: 250px;
+    }
+
+
+    .rsvp-paper h2 {
+        font-size: 35px;
+    }
+
+}
+
+/* =========================================================
+   EXTRA CINEMATIC INTRO ANIMATIONS
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   MOVING LIGHT
+--------------------------------------------------------- */
+
+.light-sweep {
+
+    position: absolute;
+
+    width: 35vw;
+    height: 120vh;
+
+    top: -10%;
+    left: -45%;
+
+    transform:
+        rotate(18deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(230,210,165,.07),
+            transparent
+        );
+
+    filter:
+        blur(20px);
+
+    animation:
+        lightSweep 12s ease-in-out infinite;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes lightSweep {
+
+    0% {
+        left: -45%;
+    }
+
+    50% {
+        left: 110%;
+    }
+
+    100% {
+        left: 110%;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   ORNAMENTS
+--------------------------------------------------------- */
+
+.floating-ornament {
+
+    position: absolute;
+
+    z-index: 2;
+
+    font-family:
+        var(--serif);
+
+    font-size: 30px;
+
+    color:
+        var(--champagne);
+
+    opacity: .35;
+
+    text-shadow:
+        0 0 20px rgba(230,210,165,.5);
+
+    animation:
+        ornamentFloat 5s ease-in-out infinite;
+
+}
+
+
+.ornament-left {
+
+    left: 13%;
+
+    top: 45%;
+
+}
+
+
+.ornament-right {
+
+    right: 13%;
+
+    top: 42%;
+
+    animation-delay:
+        -2s;
+
+}
+
+
+@keyframes ornamentFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: .25;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(15deg);
+
+        opacity: .55;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   NAMES
+--------------------------------------------------------- */
+
+.intro-names-luxury {
+
+    animation:
+        namesAppear 2s cubic-bezier(.2,.8,.2,1)
+        both;
+
+}
+
+
+.name-reveal {
+
+    display: inline-block;
+
+    animation:
+        letterFloat 4s ease-in-out infinite;
+
+}
+
+
+.name-reveal:last-child {
+
+    animation-delay:
+        -.8s;
+
+}
+
+
+@keyframes namesAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+        filter:
+            blur(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+
+    }
+
+}
+
+
+@keyframes letterFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-2px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   DATE
+--------------------------------------------------------- */
+
+.intro-date-luxury {
+
+    animation:
+        dateReveal 2s ease .5s both;
+
+}
+
+
+.intro-date-luxury span {
+
+    display: inline-block;
+
+    animation:
+        dateGlow 4s ease-in-out infinite;
+
+}
+
+
+.intro-date-luxury b {
+
+    margin:
+        0 5px;
+
+    font-weight:
+        300;
+
+    opacity: .5;
+
+}
+
+
+@keyframes dateReveal {
+
+    from {
+
+        opacity: 0;
+
+        letter-spacing:
+            .8em;
+
+    }
+
+    to {
+
+        opacity: .8;
+
+        letter-spacing:
+            .45em;
+
+    }
+
+}
+
+
+@keyframes dateGlow {
+
+    0%,
+    100% {
+
+        opacity: .65;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        text-shadow:
+            0 0 15px
+            rgba(230,210,165,.4);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   ORNAMENTAL DIVIDER
+--------------------------------------------------------- */
+
+.ornamental-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin:
+        3px 0 15px;
+
+    opacity: .6;
+
+}
+
+
+.ornamental-divider span {
+
+    width: 38px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold)
+        );
+
+}
+
+
+.ornamental-divider span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+
+}
+
+
+.ornamental-divider i {
+
+    font-size: 9px;
+
+    color:
+        var(--champagne);
+
+    animation:
+        dividerPulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes dividerPulse {
+
+    50% {
+
+        transform:
+            rotate(180deg)
+            scale(1.3);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   ENVELOPE BREATHING
+--------------------------------------------------------- */
+
+.luxury-envelope {
+
+    animation:
+        envelopeBreath 5s ease-in-out infinite;
+
+}
+
+
+@keyframes envelopeBreath {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   WAX SEAL
+--------------------------------------------------------- */
+
+.luxury-wax {
+
+    overflow: hidden;
+
+}
+
+
+.wax-shine {
+
+    position: absolute;
+
+    width: 25px;
+    height: 100px;
+
+    top: -20px;
+    left: -45px;
+
+    transform:
+        rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    animation:
+        sealShine 4s ease-in-out infinite;
+
+}
+
+
+@keyframes sealShine {
+
+    0% {
+
+        left: -45px;
+
+    }
+
+    35% {
+
+        left: 90px;
+
+    }
+
+    100% {
+
+        left: 90px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   BREAK THE SEAL
+--------------------------------------------------------- */
+
+.instruction-text {
+
+    position: relative;
+
+}
+
+
+.instruction-text::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 100%;
+
+    height: 1px;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left;
+
+    background:
+        var(--champagne);
+
+    animation:
+        instructionLine 3s ease-in-out infinite;
+
+}
+
+
+@keyframes instructionLine {
+
+    0%,
+    100% {
+
+        transform:
+            scaleX(0);
+
+    }
+
+    50% {
+
+        transform:
+            scaleX(1);
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   TAP HINT
+--------------------------------------------------------- */
+
+.tap-hint {
+
+    margin-top: 7px;
+
+    font-size: 6px;
+
+    letter-spacing: .28em;
+
+    color:
+        rgba(230,210,165,.35);
+
+    animation:
+        tapHint 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes tapHint {
+
+    0%,
+    100% {
+
+        opacity: .25;
+
+    }
+
+    50% {
+
+        opacity: .8;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MORE PARTICLES
+--------------------------------------------------------- */
+
+.gold-dust span {
+
+    animation:
+        cinematicDust 7s ease-in-out infinite;
+
+}
+
+
+.gold-dust span:nth-child(2n) {
+
+    width: 2px;
+    height: 2px;
+
+}
+
+
+.gold-dust span:nth-child(3n) {
+
+    width: 4px;
+    height: 4px;
+
+}
+
+
+@keyframes cinematicDust {
+
+    0% {
+
+        transform:
+            translate3d(0,20px,0)
+            scale(.5);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: .5;
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(15px,-20px,0)
+            scale(1);
+
+        opacity: .8;
+
+    }
+
+    80% {
+
+        opacity: .3;
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(-10px,-50px,0)
+            scale(.4);
+
+        opacity: 0;
+
+    }
+
+}
+/* =========================================================
+   LUXURY INVITATION REVEAL
+========================================================= */
+
+.sealed-invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        opacity .8s ease,
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* Small heading above envelope */
+
+.invitation-label {
+    font-size: 8px;
+    letter-spacing: .42em;
+    color: rgba(230,210,165,.65);
+
+    margin-bottom: 16px;
+
+    animation:
+        invitationLabelReveal 2s ease both;
+}
+
+@keyframes invitationLabelReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+        letter-spacing: .7em;
+    }
+
+    to {
+        opacity: .65;
+        transform: translateY(0);
+        letter-spacing: .42em;
+    }
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.luxury-envelope {
+    position: relative;
+
+    width: 340px;
+    height: 225px;
+
+    perspective: 1200px;
+
+    animation:
+        envelopeBreath 5s ease-in-out infinite;
+}
+
+
+.envelope-shell {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #35181f,
+            #211015 60%,
+            #35171e
+        );
+
+    border: 1px solid rgba(184,149,82,.45);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65),
+        inset 0 0 35px rgba(0,0,0,.35);
+
+    overflow: visible;
+
+    transform-style: preserve-3d;
+}
+
+
+/* Subtle velvet texture */
+
+.envelope-texture {
+    position: absolute;
+    inset: 0;
+
+    opacity: .12;
+
+    background:
+        repeating-linear-gradient(
+            115deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255,255,255,.04) 4px
+        );
+
+    pointer-events: none;
+}
+
+
+/* Gold inner border */
+
+.gold-lining {
+    position: absolute;
+
+    inset: 9px;
+
+    border: 1px solid rgba(230,210,165,.22);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ENVELOPE FRONT
+========================================================= */
+
+.envelope-front {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+
+.envelope-ornament {
+    font-family: var(--serif);
+
+    color: var(--champagne);
+
+    font-size: 17px;
+
+    margin-bottom: 13px;
+
+    opacity: .7;
+
+    animation:
+        ornamentPulse 4s ease-in-out infinite;
+}
+
+
+@keyframes ornamentPulse {
+
+    0%,100% {
+        transform: scale(1) rotate(0);
+        opacity: .55;
+    }
+
+    50% {
+        transform: scale(1.18) rotate(90deg);
+        opacity: .9;
+    }
+}
+
+
+.envelope-invite-text {
+    color: var(--champagne);
+
+    font-family: var(--serif);
+
+    font-size: 24px;
+
+    letter-spacing: .16em;
+
+    line-height: 1.45;
+
+    font-weight: 300;
+}
+
+
+.envelope-invite-text span {
+    display: block;
+
+    font-size: 28px;
+
+    letter-spacing: .23em;
+
+    margin-left: .23em;
+}
+
+
+.envelope-small-text {
+    margin-top: 12px;
+
+    font-size: 6px;
+
+    letter-spacing: .34em;
+
+    color: rgba(230,210,165,.45);
+}
+
+
+/* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+.envelope-flap-luxury {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 58%;
+
+    z-index: 5;
+
+    transform-origin: top center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3d1c24,
+            #281319
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    border-top: 1px solid rgba(230,210,165,.28);
+
+    transition:
+        transform 1.1s cubic-bezier(.2,.8,.2,1);
+
+    transform-style: preserve-3d;
+}
+
+
+.flap-inner {
+    position: absolute;
+
+    inset: 8px;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 94%
+        );
+
+    border-top: 1px solid rgba(230,210,165,.16);
+}
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.luxury-wax {
+    position: absolute;
+
+    left: 50%;
+    top: 58%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width: 66px;
+    height: 66px;
+
+    border-radius: 50%;
+
+    border: 0;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #2a2320,
+            #1c1614 45%,
+            #0f0b0a 100%
+        );
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.5),
+        inset 0 2px 4px rgba(255,255,255,.15),
+        inset 0 -5px 8px rgba(0,0,0,.45);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.luxury-wax:hover {
+    transform:
+        translate(-50%,-50%)
+        scale(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.6),
+        0 0 30px rgba(230,210,165,.18),
+        inset 0 2px 4px rgba(255,255,255,.2);
+}
+
+
+.wax-ring {
+    position: absolute;
+
+    inset: 7px;
+
+    border: 1px solid rgba(230,210,165,.42);
+
+    border-radius: 50%;
+}
+
+.wax-emblem {
+    position: absolute;
+
+    inset: 4px;
+
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(0 1px 2px rgba(0,0,0,.4));
+}
+
+
+.wax-shine {
+    position: absolute;
+
+    width: 20px;
+    height: 90px;
+
+    top: -15px;
+    left: -35px;
+
+    transform: rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    animation:
+        sealShine 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   OPEN ENVELOPE
+========================================================= */
+
+.luxury-envelope.open {
+    animation: none;
+}
+
+
+.luxury-envelope.open
+.envelope-flap-luxury {
+
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+}
+
+
+.luxury-envelope.open
+.luxury-wax {
+
+    animation:
+        sealBreak .55s ease forwards;
+}
+
+
+@keyframes sealBreak {
+
+    0% {
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    45% {
+        transform:
+            translate(-50%,-50%)
+            scale(1.25)
+            rotate(8deg);
+    }
+
+    100% {
+        transform:
+            translate(-50%,-50%)
+            scale(0)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   SEALED SCREEN EXIT
+========================================================= */
+
+.sealed-invitation.opened {
+
+    opacity: 0;
+
+    transform:
+        translateY(-40px)
+        scale(.96);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   REVEALED INVITATION CARD
+========================================================= */
+
+.revealed-invitation {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-46%)
+        translateY(80px)
+        scale(.9);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+
+.revealed-invitation.visible {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%,-50%)
+        translateY(0)
+        scale(1);
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.invitation-card {
+
+    position: relative;
+
+    width: 310px;
+    min-height: 395px;
+
+    padding: 45px 30px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fbf5e9,
+            #f4ead7
+        );
+
+    color: #3a2024;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+
+    overflow: hidden;
+}
+
+
+.card-border {
+
+    position: absolute;
+
+    inset: 11px;
+
+    border: 1px solid rgba(184,149,82,.65);
+
+    pointer-events: none;
+}
+
+
+.card-border::before,
+.card-border::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    border-color: #b89552;
+}
+
+
+.card-border::before {
+
+    left: -1px;
+    top: -1px;
+
+    border-left: 1px solid;
+    border-top: 1px solid;
+}
+
+
+.card-border::after {
+
+    right: -1px;
+    bottom: -1px;
+
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-ornament {
+
+    color: #b89552;
+
+    font-size: 18px;
+
+    margin-bottom: 16px;
+
+    animation:
+        cardOrnament 4s ease-in-out infinite;
+}
+
+
+@keyframes cardOrnament {
+
+    0%,100% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+
+.card-small {
+
+    font-size: 7px;
+
+    letter-spacing: .32em;
+
+    color: #8d7650;
+
+    margin-bottom: 17px;
+}
+
+
+.card-heading {
+
+    font-size: 7px;
+
+    letter-spacing: .19em;
+
+    color: #80694a;
+
+    line-height: 1.8;
+
+    max-width: 220px;
+
+    margin: 0 auto 24px;
+}
+
+
+.card-names {
+
+    font-family: var(--serif);
+
+    color: #32151b;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.reveal-name {
+
+    font-size: 36px;
+
+    line-height: 1.1;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+}
+
+
+.revealed-invitation.visible
+.reveal-name {
+
+    animation:
+        nameReveal .9s ease forwards;
+}
+
+
+.revealed-invitation.visible
+.reveal-name:last-child {
+
+    animation-delay: .35s;
+}
+
+
+@keyframes nameReveal {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.reveal-amp {
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+
+    color: #b89552;
+
+    margin: 6px 0;
+
+    opacity: 0;
+
+    transform: scale(.6);
+}
+
+
+.revealed-invitation.visible
+.reveal-amp {
+
+    animation:
+        ampReveal .7s ease .2s forwards;
+}
+
+
+@keyframes ampReveal {
+
+    to {
+        opacity: .9;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   CARD DATE
+========================================================= */
+
+.card-date {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+
+    font-size: 8px;
+
+    letter-spacing: .16em;
+
+    color: #80694a;
+
+    opacity: 0;
+}
+
+
+.revealed-invitation.visible
+.card-date {
+
+    animation:
+        dateCardReveal .8s ease .7s forwards;
+}
+
+
+@keyframes dateCardReveal {
+
+    from {
+        opacity: 0;
+        letter-spacing: .4em;
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: .16em;
+    }
+}
+
+
+.card-date i {
+
+    color: #b89552;
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   CARD DIVIDER
+========================================================= */
+
+.card-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin: 23px auto 17px;
+
+    opacity: .7;
+}
+
+
+.card-divider span {
+
+    width: 45px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b89552
+        );
+}
+
+
+.card-divider span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            #b89552,
+            transparent
+        );
+}
+
+
+.card-divider b {
+
+    font-size: 7px;
+
+    color: #b89552;
+
+    font-weight: normal;
+}
+
+
+/* =========================================================
+   CARD DETAILS
+========================================================= */
+
+.card-details {
+
+    font-size: 7px;
+
+    letter-spacing: .25em;
+
+    line-height: 2;
+
+    color: #80694a;
+
+    opacity: 0;
+
+}
+
+
+.revealed-invitation.visible
+.card-details {
+
+    animation:
+        detailsReveal .8s ease 1s forwards;
+}
+
+
+@keyframes detailsReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: .85;
+        transform: translateY(0);
+    }
+}
+
+
+.card-bottom-ornament {
+
+    margin-top: 20px;
+
+    color: #b89552;
+
+    font-size: 16px;
+
+    opacity: .7;
+}
+
+
+/* =========================================================
+   TAP TO ENTER
+========================================================= */
+
+.enter-invitation {
+
+    margin-top: 18px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--champagne);
+
+    font-size: 7px;
+
+    letter-spacing: .32em;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    opacity: 0;
+
+    animation:
+        enterHint 2s ease 2s infinite;
+}
+
+
+.revealed-invitation.visible
+.enter-invitation {
+
+    opacity: 1;
+}
+
+
+.enter-invitation span {
+
+    width: 25px;
+
+    height: 1px;
+
+    background: var(--champagne);
+
+    opacity: .5;
+}
+
+
+@keyframes enterHint {
+
+    0%,100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .luxury-envelope {
+
+        width: 300px;
+        height: 200px;
+
+    }
+
+
+    .envelope-invite-text {
+
+        font-size: 21px;
+
+    }
+
+
+    .envelope-invite-text span {
+
+        font-size: 24px;
+
+    }
+
+
+    .luxury-wax {
+
+        width: 62px;
+        height: 62px;
+
+    }
+
+
+    .invitation-card {
+
+        width: min(310px, 82vw);
+
+        min-height: 390px;
+
+        padding:
+            42px 24px;
+
+    }
+
+
+    .reveal-name {
+
+        font-size: 32px;
+
+    }
+
+
+    .card-heading {
+
+        font-size: 6px;
+
+    }
+
+
+    .card-details {
+
+        font-size: 6px;
+
+    }
+
+
+    .invitation-label {
+
+        font-size: 7px;
+
+    }
+
+}
+
+
+/* Smaller phones */
+
+@media (max-width: 380px) {
+
+    .luxury-envelope {
+
+        width: 270px;
+        height: 180px;
+
+    }
+
+
+    .envelope-invite-text {
+
+        font-size: 19px;
+
+    }
+
+
+    .envelope-invite-text span {
+
+        font-size: 22px;
+
+    }
+
+
+    .invitation-card {
+
+        width: 82vw;
+
+        min-height: 370px;
+
+        padding:
+            35px 20px;
+
+    }
+
+
+    .reveal-name {
+
+        font-size: 29px;
+
+    }
+
+}
